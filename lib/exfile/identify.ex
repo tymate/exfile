@@ -18,7 +18,7 @@ defmodule Exfile.Identify do
 
   defp extract_content_type_from_file_output(out) do
     out = String.strip(out)
-    if Regex.match?(~r{^[-\w]+/[-\w]+$}, out) do
+    if Regex.match?(~r{^[-\w]+/[-\w\+]+$}, out) do
       {:ok, out}
     else
       :error
